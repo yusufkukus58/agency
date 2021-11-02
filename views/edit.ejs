@@ -1,0 +1,39 @@
+<%- include('../views/partials/_header.ejs') -%>
+
+<%- include('../views/partials/_navigation.ejs') -%>
+   
+   <!-- Add Photo-->
+   <section class="page-section" id="contact">
+    <div class="container">
+        <div class="text-center">
+            <h2 class="section-heading text-uppercase">UPDATE POST</h2>
+            <p style="color: aliceblue;">
+                Integer sit amet odio id libero tincidunt dignissim in eget arcu. Aliquam tristique ut magna sit amet tincidunt. Sed tempor tellus nulla, molestie luctus lectus tincidunt id. You are <u>not allowed</u> to re-distribute the template ZIP file on any template collection website.
+            </p>
+            
+        </div>
+      
+        <div class="mx-auto ">
+            <div class="row">
+                <div class="offset-2 col-lg-8 ">
+
+                    <form method="POST" action="/photos/<%= photo._id %>?_method=PUT" class="tm-contact-form" encType="multipart/form-data">
+                        <div class="form-group mb-5">   <input type="text" name="title" class="form-control rounded-0" value="<%= photo.title %>"  placeholder="Photo Title" required>
+                        </div>
+
+                        <div class="form-group  mb-5">  <textarea rows="8" name="description" class="form-control rounded-0" placeholder="Photo Description"
+                            required><%= photo.description %></textarea><br><br><br>
+
+                  <div class="form-group mb-5 mr-10"  >
+                    <button  type="submit" class="btn btn-primary rounded-0 d-block ml-auto mr-0 tm-btn-animate tm-btn-submit tm-icon-submit"><span>Update Post</span></button>
+                  </div>
+                </form>   
+
+                </div>
+               
+            </div>  
+        </div>                               
+    </div>
+</section>
+
+<%- include('../views/partials/_footer.ejs') -%>
